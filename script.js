@@ -1,4 +1,4 @@
-let questions = [{
+let generalQuestions = [{
 "question": "Wie nennt man den Text in dem Computerprogramme geschrieben werden?",
 "answer_1": "Geheimtext",
 "answer_2": "Ausführungstext",
@@ -47,14 +47,6 @@ let questions = [{
     "right_answer": 1
 },
 {
-    "question": "In welche Jahr wurde die erste höhere Programmiersprache Plankalkül eingeführt?",
-    "answer_1": "1946",
-    "answer_2": "1961",
-    "answer_3": "1954",
-    "answer_4": "1958",
-    "right_answer": 1
-},
-{
     "question": "An welcher Sprache orientieren sich die meisten Programmiersprachen?",
     "answer_1": "Deutsch",
     "answer_2": "Englisch",
@@ -71,14 +63,6 @@ let questions = [{
     "right_answer": 4
 },
 {
-    "question": "Was ist keine Spiele Engine?",
-    "answer_1": "Wall Engine",
-    "answer_2": "Unreal Engine",
-    "answer_3": "Cry Enginet",
-    "answer_4": "Source Eninge",
-    "right_answer": 1
-},
-{
     "question": "Wobei handelt es sich um eine Programmiersprache?",
     "answer_1": "Queens",
     "answer_2": "Westminster",
@@ -93,4 +77,77 @@ let questions = [{
     "answer_3": "Hypertext Markup Language",
     "answer_4": "Hypertext Model Language",
     "right_answer": 3
-}]
+}];
+
+let htmlQuestions = [{
+    "question": "Wofür steht die Abkürzung HTML?",
+    "answer_1": "Hypertext Message Language",
+    "answer_2": "Hypertext Meta Language",
+    "answer_3": "Hypertext Markup Language",
+    "answer_4": "Hypertext Model Language",
+    "right_answer": 3
+},
+{
+    "question": "Wähle den korrekten HTML Tag für die größte Überschrift?",
+    "answer_1": "<heading>",
+    "answer_2": "<h6>",
+    "answer_3": "<h1>",
+    "answer_4": "<head>",
+    "right_answer": 3
+},
+{
+    "question": "Was ist der korrekte Tag für einen Zeilenumbruch?",
+    "answer_1": "<break>",
+    "answer_2": "<br/>",
+    "answer_3": "<lb/>",
+    "answer_4": "<enter>",
+    "right_answer": 2
+},
+{
+    "question": "Was ist der korrekte HTML Tag um einen Text dicker zu machen?",
+    "answer_1": "<b>",
+    "answer_2": "<bold>",
+    "answer_3": "<size>",
+    "answer_4": "<big>",
+    "right_answer": 1
+},
+{
+    "question": "",
+    "answer_1": "",
+    "answer_2": "",
+    "answer_3": "",
+    "answer_4": "",
+    "right_answer": 3
+},
+{
+    "question": "",
+    "answer_1": "",
+    "answer_2": "",
+    "answer_3": "",
+    "answer_4": "",
+    "right_answer": 3
+},
+{
+    "question": "",
+    "answer_1": "",
+    "answer_2": "",
+    "answer_3": "",
+    "answer_4": "",
+    "right_answer": 3
+},
+{
+    "question": "",
+    "answer_1": "",
+    "answer_2": "",
+    "answer_3": "",
+    "answer_4": "",
+    "right_answer": 3
+},
+{
+    "question": "",
+    "answer_1": "",
+    "answer_2": "",
+    "answer_3": "",
+    "answer_4": "",
+    "right_answer": 3
+}];
