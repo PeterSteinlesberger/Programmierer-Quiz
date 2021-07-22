@@ -9,62 +9,56 @@
     <script src="script.js"></script>
 
     <!--include Font Family "Rubik"-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!--include Font Family "PT SANS"-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="main-container">
       <div class="left-container">
-        <img src="img/logo.png" class="logo" />
+        <img src="img/logo.png" class="logo">
         <div class="menu-container">
-          <div id="general" class="container-category">General</div>
-          <div id="html" class="container-category">HTML</div>
-          <div id="css" class="container-category">CSS</div>
-          <div id="js" class="container-category">JS</div>
+          <div id="category_1" class="container-category">General</div>
+          <div id="category_2" class="container-category">HTML</div>
+          <div id="category_3" class="container-category">CSS</div>
+          <div id="category_4" class="container-category">JS</div>
         </div>
       </div>
-      <div class="right-container d-none">
+      <div id="landingPage" class="right-container">
         <div class="landing-text">
           <span class="main-text">Welcome to</span
           ><span class="main-text">The Awesome Web-Developer Quiz</span>
           <span class="main-question">Ready for the Challenge?</span>
         </div>
         <div class="container-start-btn">
-          <div class="start-button">
+          <div class="start-button" onclick="startGame()">
             <span>START NOW</span><span class="pointer">></span>
           </div>
         </div>
       </div>
  <!--</div>-->   
-    <div class="questions-main-container">
-      <div class="question-container"><span>dfgsfghdfhdfghdfghdfgh</span></div>
+    <div id="questionsPage" class="questions-main-container d-none">
+      <div class="question-container"><span id="question" class="question-text">dfgsfghdfhdfghdfghdfgh</span></div>
       <div class="answer-container">
         <div class="answer">
-          <div class="answer-letter"><b>A</b></div>
-          <div class="answer-text">sdfsdfsdf</div>
+          <div id="letter_1" class="answer-letter"><b>A</b></div>
+          <div id="answer_1" class="answer-text" onclick="clickAnswer('answer_1')">sdfsdfsdf</div>
         </div>
-        <div class="answer">
+        <div id="letter_2" class="answer">
           <div class="answer-letter"><b>B</b></div>
-          <div class="answer-text">sdfsdfsdf</div>
+          <div id="answer_2" class="answer-text" onclick="clickAnswer('answer_2')">sdfsdfsdf</div>
         </div>
-        <div class="answer">
+        <div id="letter_3" class="answer">
           <div class="answer-letter"><b>C</b> </div>
-          <div class="answer-text">dfsdfsdfsdf</div>
+          <div id="answer_3" class="answer-text" onclick="clickAnswer('answer_3')">dfsdfsdfsdf</div>
         </div>
-        <div class="answer">
+        <div id="letter_4" class="answer">
           <div class="answer-letter"><b>D</b></div>
-          <div class="answer-text">sdfsdfsdf</div>
+          <div id="answer_4" class="answer-text" onclick="clickAnswer('answer_4')">sdfsdfsdf</div>
         </div>
       </div>
 <div class="pointer-button-container">
