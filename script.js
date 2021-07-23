@@ -158,3 +158,63 @@ let htmlQuestions = [
   },
 ];
 
+let cssQuestions = [];
+let jsQuestions = [];
+
+let thisArea = 1;
+let questionArea = 0;
+let thisQuestion;
+
+function startGame() {           // switch the screen from landing-page to question-page
+  document.getElementById("landingPage").classList.add("d-none");
+  document.getElementById("questionsPage").classList.remove("d-none");
+  showNextQuestion();
+}
+
+function showNextQuestion() {            // show next question and answers
+ nextTheme();
+
+  for (let i = 0; i < questionArea.length; i++) {
+    thisQuestion = questionArea[i];
+    document.getElementById("question").innerHTML = thisQuestion['question'];
+    document.getElementById("answer_1").innerHTML = thisQuestion['answer_1'];
+    document.getElementById("answer_2").innerHTML = thisQuestion['answer_2'];
+    document.getElementById("answer_3").innerHTML = thisQuestion['answer_3'];
+    document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
+    if (i == questionArea.length) {
+      thisArea++;
+    }
+  }
+}
+
+function nextTheme() {  //switch to next questions-area and markup the actual area
+  if (thisArea == 0) {
+    questionArea = generalQuestions;
+    document.getElementById('category_1').classList.add('actual-category');
+  } else if (thisArea == 1) {
+    questionArea = htmlQuestions;
+    document.getElementById('category_1').classList.remove('actual-category');
+    document.getElementById('category_2').classList.add('actual-category');
+  } else if (thisArea == 2) {
+    questionArea = cssQuestions;
+    document.getElementById('category_2').classList.remove('actual-category');
+    document.getElementById('category_3').classList.add('actual-category');
+  } else {
+    questionArea = jsQuestions;
+    document.getElementById('category_3').classList.remove('actual-category');
+    document.getElementById('category_4').classList.add('actual-category');
+  }
+}
+
+function clickAnswer(selection) {       // 
+    
+    if( selection.slice(-1) == thisQuestion[right_answer]) {
+        document.getElementById(`answer_${selection}`).classList.add('right-answer-style');
+        document.getElementById(`letter_${selection}`).classList.add('right-answer-box');
+    } else {
+        document.getElementById(`answer_${selection}`).classList.add('wrong-answer-style');
+        document.getElementById(`letter_${selection}`).classList.add('wrong-answer-box');
+    }
+   }
+
+
