@@ -1,15 +1,15 @@
 let generalQuestions = [
   {
     question:
-      "Wie nennt man den Text in dem Computerprogramme geschrieben werden?",
-    answer_1: "Geheimtext",
-    answer_2: "Ausführungstext",
-    answer_3: "Funktionstext",
-    answer_4: "Quelltext",
+      "What do you call the text in which computer programs are written?",
+    answer_1: "cipher code",
+    answer_2: "Execution code",
+    answer_3: "Function code",
+    answer_4: "Source code",
     right_answer: 4,
   },
   {
-    question: "Welche Programmiersprache schreibt man wie ein Kochrezept?",
+    question: "Which programming language do you write like a recipe?",
     answer_1: "Chef",
     answer_2: "Gourmet",
     answer_3: "Dessert",
@@ -17,7 +17,7 @@ let generalQuestions = [
     right_answer: 1,
   },
   {
-    question: "Was ist die jüngste Programmiersprache?",
+    question: "What is the youngest programing language?",
     answer_1: "Swift",
     answer_2: "AppleScript",
     answer_3: "Java",
@@ -25,7 +25,7 @@ let generalQuestions = [
     right_answer: 1,
   },
   {
-    question: "Wann wurde die Programmiersprache JavaScript eingeführt?",
+    question: "When was the beginning of Javascript?",
     answer_1: "1982",
     answer_2: "2002",
     answer_3: "1995",
@@ -33,59 +33,18 @@ let generalQuestions = [
     right_answer: 3,
   },
   {
-    question: "Was ist keine Programmiersprache?",
+    question: "What is not a programing Language?",
     answer_1: "PHP",
     answer_2: "Zoom 4",
     answer_3: "C++",
     answer_4: "Pascal",
     right_answer: 2,
-  },
-  {
-    question: "Was ist kein Content Management System (CMS)?",
-    answer_1: "cURL",
-    answer_2: "Joomla",
-    answer_3: "WordPress",
-    answer_4: "Typo3",
-    right_answer: 1,
-  },
-  {
-    question:
-      "An welcher Sprache orientieren sich die meisten Programmiersprachen?",
-    answer_1: "Deutsch",
-    answer_2: "Englisch",
-    answer_3: "Spanisch",
-    answer_4: "Französisch",
-    right_answer: 2,
-  },
-  {
-    question: "Welche Maßeinheit aus der Digitaltechnik gibt es nicht?",
-    answer_1: "Terabyte",
-    answer_2: "Megabyte",
-    answer_3: "Petabyte",
-    answer_4: "Zulerbyte",
-    right_answer: 4,
-  },
-  {
-    question: "Wobei handelt es sich um eine Programmiersprache?",
-    answer_1: "Queens",
-    answer_2: "Westminster",
-    answer_3: "Hollywood",
-    answer_4: "Spandau",
-    right_answer: 3,
-  },
-  {
-    question: "Wofür steht die Abkürzung HTML?",
-    answer_1: "Hypertext Message Language",
-    answer_2: "Hypertext Meta Language",
-    answer_3: "Hypertext Markup Language",
-    answer_4: "Hypertext Model Language",
-    right_answer: 3,
-  },
+  }
 ];
 
 let htmlQuestions = [
   {
-    question: "Wofür steht die Abkürzung HTML?",
+    question: "What does the abbreviation HTML stand for?",
     answer_1: "Hypertext Message Language",
     answer_2: "Hypertext Meta Language",
     answer_3: "Hypertext Markup Language",
@@ -117,46 +76,13 @@ let htmlQuestions = [
     right_answer: 1,
   },
   {
-    question: "",
-    answer_1: "",
-    answer_2: "",
-    answer_3: "",
-    answer_4: "",
-    right_answer: 3,
-  },
-  {
-    question: "",
-    answer_1: "",
-    answer_2: "",
-    answer_3: "",
-    answer_4: "",
-    right_answer: 3,
-  },
-  {
-    question: "",
-    answer_1: "",
-    answer_2: "",
-    answer_3: "",
-    answer_4: "",
-    right_answer: 3,
-  },
-  {
-    question: "",
-    answer_1: "",
-    answer_2: "",
-    answer_3: "",
-    answer_4: "",
-    right_answer: 3,
-  },
-  {
-    question: "",
-    answer_1: "",
-    answer_2: "",
-    answer_3: "",
-    answer_4: "",
-    right_answer: 3,
-  },
-];
+    question: "Which one is the latest version of HTML?",
+    answer_1: "HTML 3.2",
+    answer_2: "HTML 4.01",
+    answer_3: "HMTL 4.2",
+    answer_4: "HTML 5.2",
+    right_answer: 4,
+  }];
 
 let cssQuestions = [];
 let jsQuestions = [];
@@ -171,8 +97,8 @@ function startGame() {           // switch the screen from landing-page to quest
   showNextQuestion();
 }
 
-function showNextQuestion() {            // show next question and answers
- nextTheme();
+function showNextQuestion() {        // show next question and answers
+ markCurrentTheme();
 
   for (let i = 0; i < questionArea.length; i++) {
     thisQuestion = questionArea[i];
@@ -181,13 +107,13 @@ function showNextQuestion() {            // show next question and answers
     document.getElementById("answer_2").innerHTML = thisQuestion['answer_2'];
     document.getElementById("answer_3").innerHTML = thisQuestion['answer_3'];
     document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
-    if (i == questionArea.length) {
+    if (i == (questionArea.length - 1)) {
       thisArea++;
     }
   }
 }
 
-function nextTheme() {  //switch to next questions-area and markup the actual area
+function markCurrentTheme() {       // markup the actual area and switch to next questions-area
   if (thisArea == 0) {
     questionArea = generalQuestions;
     document.getElementById('category_1').classList.add('actual-category');
