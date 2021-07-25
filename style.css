@@ -126,8 +126,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 65vh;
-  background-color: rgba(247,247,247,255)
-  ;
+  background-color: rgba(247,247,247,255);
   border-bottom-right-radius: 14px;
   border-top-right-radius: 14px;
 }
@@ -136,8 +135,7 @@ body {
   height: 30%;
   width: 100%;
   font-size: medium;
-  background-color: rgba(247,247,247,255)
-  ;
+  background-color: rgba(247,247,247,255);
   display: flex;
   align-items: center;
   font-size: medium;
@@ -157,6 +155,7 @@ body {
 .answer {
   display: flex;
   align-items: center;
+  justify-content: space-betweenS;
   width: 65%;
   height: 70px;
   background-color: rgb(255, 255, 255);
@@ -166,8 +165,7 @@ body {
 .answer-letter {
   width: 50px;
   height: 50px;
-  background-color: rgba(247,247,247,255)
-  ;
+  background-color: rgba(247,247,247,255);
   margin-left: 10px;
   display: flex;
   justify-content: center;
@@ -180,24 +178,20 @@ body {
   font-size: 22px;
 }
 
-.answer-text:hover {
-background-color: lightskyblue;
-}
-
-.wrong-answer-style {
-    background-color: orangered;
-    color: white;
-}
-
-.right-answer-style {
+.right-answer-button {
     background-color: rgba(183,247,153,255);
-    color: white;
 }
 
 .right-answer-box {
-    background-color: rgba(80,190,23,255);
+    background-color: rgba(80,190,23,255);  
+    color: whitesmoke;
+}
+
+.wrong-answer-button {
+    background-color: rgba(255,163,164,255);
 }
 
 .wrong-answer-box {
-    background-color: darkred;
+    background-color: rgb(223,45,47);  
+    color: whitesmoke;
 }

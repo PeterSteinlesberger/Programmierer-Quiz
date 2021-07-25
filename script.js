@@ -132,14 +132,15 @@ function markCurrentTheme() {       // markup the actual area and switch to next
   }
 }
 
-function clickAnswer(selection) {       // 
-    
-    if( selection.slice(-1) == thisQuestion[right_answer]) {
-        document.getElementById(`answer_${selection}`).classList.add('right-answer-style');
-        document.getElementById(`letter_${selection}`).classList.add('right-answer-box');
+function clickAnswer(selection) {       // add colors to the clicked button
+    let i = selection.slice(-1)
+    if( i == thisQuestion['right_answer']) {
+      console.log(i);
+        document.getElementById(`answerButton${i}`).classList.add("right-answer-button");
+        document.getElementById(`letter_${i}`).classList.add("right-answer-box");
     } else {
-        document.getElementById(`answer_${selection}`).classList.add('wrong-answer-style');
-        document.getElementById(`letter_${selection}`).classList.add('wrong-answer-box');
+        document.getElementById(`answerButton${i}`).classList.add("wrong-answer-button");
+        document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
     }
    }
 
