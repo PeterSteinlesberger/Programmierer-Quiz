@@ -53,26 +53,26 @@ let htmlQuestions = [
   },
   {
     question: "Choose the correct HTML TAG for the biggest headline:",
-    answer_1: "<heading>",
-    answer_2: "<h6>",
-    answer_3: "<h1>",
-    answer_4: "<head>",
+    answer_1: "heading",
+    answer_2: "h6",
+    answer_3: "h1",
+    answer_4: "head",
     right_answer: 3,
   },
   {
     question: "What is the correct TAG for a new line?",
-    answer_1: "<break>",
-    answer_2: "<br>",
-    answer_3: "<lb/>",
-    answer_4: "<enter>",
+    answer_1: "break",
+    answer_2: "br",
+    answer_3: "lb/",
+    answer_4: "enter",
     right_answer: 2,
   },
   {
     question: "What is the correct HTML tag to make a text thicker?",
-    answer_1: "<b>",
-    answer_2: "<bold>",
-    answer_3: "<size>",
-    answer_4: "<big>",
+    answer_1: "b",
+    answer_2: "bold",
+    answer_3: "size",
+    answer_4: "big",
     right_answer: 1,
   },
   {
@@ -165,13 +165,7 @@ let jsQuestions = [ {
   answer_3: "The Descendant Selector",
   answer_4: "The Class Selector",
   right_answer: 4
-},
-
-
-
-];
-
-
+},];
 
 let thisArea = 0;
 let questionArea = 0;
@@ -180,7 +174,6 @@ let rightAnswerCounter = 0;
 let questionCounter = 0;
 let questionIndex = 0;
 let i = 0;
-
 
 function startGame() {           // switch the screen from landing-page to question-page
   document.getElementById("landingPage").classList.add("d-none");
@@ -200,13 +193,16 @@ function showQuestion() {        // show question and answers
     document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
     questionIndex++;
       console.log(questionIndex);
- } else {
+ } else { 
+   if(thisArea == 4) {
+ 
+   }
   questionIndex = 0;
   thisArea++;
   showQuestion();
-  console.log(questionIndex);
  }
 }
+
 
 function markCurrentTheme() {       // markup the actual area and switch to next questions-area
   if (thisArea == 0) {
@@ -239,8 +235,7 @@ function clickAnswer(selection) {       // add colors to the clicked button
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
     }
     questionCounter++;
-    setTimeout(clearButtonColor, 1000);
-    
+    setTimeout(clearButtonColor, 2000);
   }
 
 function  clearButtonColor() { 
@@ -248,7 +243,7 @@ function  clearButtonColor() {
   document.getElementById(`letter_${i}`).classList.remove("right-answer-box");
   document.getElementById(`answerButton${i}`).classList.remove("wrong-answer-button");
   document.getElementById(`letter_${i}`).classList.remove("wrong-answer-box");
-  setTimeout(showQuestion, 1000);
+  setTimeout(showQuestion, 225);
 }
    
    
