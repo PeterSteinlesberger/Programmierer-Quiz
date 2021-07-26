@@ -86,31 +86,34 @@ let htmlQuestions = [
 
 let cssQuestions = [];
 let jsQuestions = [];
-
 let thisArea = 1;
 let questionArea = 0;
-let thisQuestion;
+let thisQuestion = [];
+let rightAnswerCounter = 0;
+let questionCounter = 0;
+let questionIndex = 0;
 
 function startGame() {           // switch the screen from landing-page to question-page
   document.getElementById("landingPage").classList.add("d-none");
   document.getElementById("questionsPage").classList.remove("d-none");
-  showNextQuestion();
+  showQuestion();
 }
 
-function showNextQuestion() {        // show next question and answers
+function showQuestion() {        // show question and answers
  markCurrentTheme();
 
-  for (let i = 0; i < questionArea.length; i++) {
-    thisQuestion = questionArea[i];
+ if( questionIndex < questionArea.length) {
+    thisQuestion = questionArea[questionIndex];
     document.getElementById("question").innerHTML = thisQuestion['question'];
     document.getElementById("answer_1").innerHTML = thisQuestion['answer_1'];
     document.getElementById("answer_2").innerHTML = thisQuestion['answer_2'];
     document.getElementById("answer_3").innerHTML = thisQuestion['answer_3'];
     document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
-    if (i == (questionArea.length - 1)) {
-      thisArea++;
-    }
-  }
+    questionIndex++;
+ } else {
+  questionIndex = 0;
+  thisArea++;
+ }
 }
 
 function markCurrentTheme() {       // markup the actual area and switch to next questions-area
@@ -132,16 +135,25 @@ function markCurrentTheme() {       // markup the actual area and switch to next
   }
 }
 
+
 function clickAnswer(selection) {       // add colors to the clicked button
     let i = selection.slice(-1)
     if( i == thisQuestion['right_answer']) {
-      console.log(i);
         document.getElementById(`answerButton${i}`).classList.add("right-answer-button");
         document.getElementById(`letter_${i}`).classList.add("right-answer-box");
+        rightAnswerCounter++;
     } else {
         document.getElementById(`answerButton${i}`).classList.add("wrong-answer-button");
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
     }
-   }
+    questionCounter++;
+    showQuestion();
+  }
+
+   
+   
+
+   
+
 
 
