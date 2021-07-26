@@ -236,7 +236,7 @@ function clickAnswer(selection) {       // add colors to the clicked button
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
     }
     questionCounter++;
-    setTimeout(clearButtonColor, 2000);
+    setTimeout(clearButtonColor, 20);
   }
 
 function  clearButtonColor() { 
