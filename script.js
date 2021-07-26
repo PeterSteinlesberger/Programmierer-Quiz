@@ -126,7 +126,50 @@ let cssQuestions = [ {
 }];
 
 
-let jsQuestions = [];
+let jsQuestions = [ {
+  question: "Which of the following selector matches a element based on its class attribute?",
+  answer_1: "The Type Selector",
+  answer_2: "The Universal Selector",
+  answer_3: "The Descendant Selector",
+  answer_4: "The Class Selector",
+  right_answer: 4
+},
+{
+  question: "Which of the following selector matches a element based on its class attribute?",
+  answer_1: "The Type Selector",
+  answer_2: "The Universal Selector",
+  answer_3: "The Descendant Selector",
+  answer_4: "The Class Selector",
+  right_answer: 4
+},
+{
+  question: "Which of the following selector matches a element based on its class attribute?",
+  answer_1: "The Type Selector",
+  answer_2: "The Universal Selector",
+  answer_3: "The Descendant Selector",
+  answer_4: "The Class Selector",
+  right_answer: 4
+},
+{
+  question: "Which of the following selector matches a element based on its class attribute?",
+  answer_1: "The Type Selector",
+  answer_2: "The Universal Selector",
+  answer_3: "The Descendant Selector",
+  answer_4: "The Class Selector",
+  right_answer: 4
+},
+{
+  question: "Which of the following selector matches a element based on its class attribute?",
+  answer_1: "The Type Selector",
+  answer_2: "The Universal Selector",
+  answer_3: "The Descendant Selector",
+  answer_4: "The Class Selector",
+  right_answer: 4
+},
+
+
+
+];
 
 
 
