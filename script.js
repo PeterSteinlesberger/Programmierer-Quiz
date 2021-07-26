@@ -86,12 +86,14 @@ let htmlQuestions = [
 
 let cssQuestions = [];
 let jsQuestions = [];
-let thisArea = 1;
+let thisArea = 0;
 let questionArea = 0;
 let thisQuestion = [];
 let rightAnswerCounter = 0;
 let questionCounter = 0;
 let questionIndex = 0;
+let i = 0;
+
 
 function startGame() {           // switch the screen from landing-page to question-page
   document.getElementById("landingPage").classList.add("d-none");
@@ -101,7 +103,7 @@ function startGame() {           // switch the screen from landing-page to quest
 
 function showQuestion() {        // show question and answers
  markCurrentTheme();
-
+ 
  if( questionIndex < questionArea.length) {
     thisQuestion = questionArea[questionIndex];
     document.getElementById("question").innerHTML = thisQuestion['question'];
@@ -110,9 +112,12 @@ function showQuestion() {        // show question and answers
     document.getElementById("answer_3").innerHTML = thisQuestion['answer_3'];
     document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
     questionIndex++;
+      console.log(questionIndex);
  } else {
   questionIndex = 0;
   thisArea++;
+  showQuestion();
+  console.log(questionIndex);
  }
 }
 
@@ -137,7 +142,7 @@ function markCurrentTheme() {       // markup the actual area and switch to next
 
 
 function clickAnswer(selection) {       // add colors to the clicked button
-    let i = selection.slice(-1)
+    i = selection.slice(-1)
     if( i == thisQuestion['right_answer']) {
         document.getElementById(`answerButton${i}`).classList.add("right-answer-button");
         document.getElementById(`letter_${i}`).classList.add("right-answer-box");
@@ -147,9 +152,17 @@ function clickAnswer(selection) {       // add colors to the clicked button
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
     }
     questionCounter++;
-    showQuestion();
+    setTimeout(clearButtonColor, 1000);
+    
   }
 
+function  clearButtonColor() { 
+  document.getElementById(`answerButton${i}`).classList.remove("right-answer-button");
+  document.getElementById(`letter_${i}`).classList.remove("right-answer-box");
+  document.getElementById(`answerButton${i}`).classList.remove("wrong-answer-button");
+  document.getElementById(`letter_${i}`).classList.remove("wrong-answer-box");
+  setTimeout(showQuestion, 1000);
+}
    
    
 
