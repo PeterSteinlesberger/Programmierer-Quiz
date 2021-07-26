@@ -60,15 +60,15 @@ let htmlQuestions = [
     right_answer: 3,
   },
   {
-    question: "What is the correct TAG for a?",
+    question: "What is the correct TAG for a new line?",
     answer_1: "<break>",
-    answer_2: "<br/>",
+    answer_2: "<br>",
     answer_3: "<lb/>",
     answer_4: "<enter>",
     right_answer: 2,
   },
   {
-    question: "Was ist der korrekte HTML Tag um einen Text dicker zu machen?",
+    question: "What is the correct HTML tag to make a text thicker?",
     answer_1: "<b>",
     answer_2: "<bold>",
     answer_3: "<size>",
@@ -84,8 +84,52 @@ let htmlQuestions = [
     right_answer: 4,
   }];
 
-let cssQuestions = [];
+let cssQuestions = [ {
+  question: "Which of the following property is used to align the text of a document?",
+  answer_1: "text-indent",
+  answer_2: "text-align",
+  answer_3: "text-decoration",
+  answer_4: "text-transform",
+  right_answer: 2,
+},
+{
+  question: "Which of the following property of a anchor element signifies visited hyperlinks?",
+  answer_1: ":link",
+  answer_2: ":visited",
+  answer_3: ":hover",
+  answer_4: ":active",
+  right_answer: 2,
+},
+{
+  question: "Which of the following property serves as shorthand for the padding properties?",
+  answer_1: "padding",
+  answer_2: "padding-top",
+  answer_3: "padding-left",
+  answer_4: "padding-right",
+  right_answer: 1,
+},
+{
+  question: "Which of the following defines a measurement in points?",
+  answer_1: "mm",
+  answer_2: "px",
+  answer_3: "pc",
+  answer_4: "pt",
+  right_answer: 4,
+},
+{
+  question: "Which of the following selector matches a element based on its class attribute?",
+  answer_1: "The Type Selector",
+  answer_2: "The Universal Selector",
+  answer_3: "The Descendant Selector",
+  answer_4: "The Class Selector",
+  right_answer: 4,
+}];
+
+
 let jsQuestions = [];
+
+
+
 let thisArea = 0;
 let questionArea = 0;
 let thisQuestion = [];
