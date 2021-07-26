@@ -195,7 +195,8 @@ function showQuestion() {        // show question and answers
       console.log(questionIndex);
  } else { 
    if(thisArea == 4) {
- 
+    document.getElementById('questionsPage').classList.add('d-none'); 
+    document.getElementById('endscreen').classList.remove('d-none');
    }
   questionIndex = 0;
   thisArea++;
