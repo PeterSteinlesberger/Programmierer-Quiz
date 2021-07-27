@@ -183,7 +183,7 @@ function startGame() {           // switch the screen from landing-page to quest
 
 function showQuestion() {        // show question and answers
  markCurrentTheme();
- 
+
  if( questionIndex < questionArea.length) {
     thisQuestion = questionArea[questionIndex];
     document.getElementById("question").innerHTML = thisQuestion['question'];
