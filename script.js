@@ -125,46 +125,45 @@ let cssQuestions = [ {
   right_answer: 4,
 }];
 
-
 let jsQuestions = [ {
-  question: "1",
-  answer_1: "The Type Selector",
-  answer_2: "The Universal Selector",
-  answer_3: "The Descendant Selector",
-  answer_4: "The Class Selector",
-  right_answer: 4
+  question: "Which of the following is not a valid JavaScript variable name?",
+  answer_1: "2names",
+  answer_2: "_first_and_last_names",
+  answer_3: "FirstAndLast",
+  answer_4: "None of the above",
+  right_answer: 1
 },
 {
-  question: "2",
-  answer_1: "The Type Selector",
-  answer_2: "The Universal Selector",
-  answer_3: "The Descendant Selector",
-  answer_4: "The Class Selector",
-  right_answer: 4
+  question: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
+  answer_1: "SCRIPT",
+  answer_2: "BODY",
+  answer_3: "HEAD",
+  answer_4: "TITLE",
+  right_answer: 1
 },
 {
-  question: "3",
-  answer_1: "The Type Selector",
-  answer_2: "The Universal Selector",
-  answer_3: "The Descendant Selector",
-  answer_4: "The Class Selector",
-  right_answer: 4
+  question: "Which of the following attribute can hold the JavaScript version?",
+  answer_1: "LANGUAGE",
+  answer_2: "SCRIPT",
+  answer_3: "VERSION",
+  answer_4: "None of the above",
+  right_answer: 1
 },
 {
-  question: "4",
-  answer_1: "The Type Selector",
-  answer_2: "The Universal Selector",
-  answer_3: "The Descendant Selector",
-  answer_4: "The Class Selector",
-  right_answer: 4
+  question: "Inside which HTML element do we put the JavaScript?",
+  answer_1: "js",
+  answer_2: "scripting",
+  answer_3: "script",
+  answer_4: "javascript",
+  right_answer: 3
 },
 {
-  question: "5",
-  answer_1: "The Type Selector",
-  answer_2: "The Universal Selector",
-  answer_3: "The Descendant Selector",
-  answer_4: "The Class Selector",
-  right_answer: 4
+  question: "Choose the server-side JavaScript object?",
+  answer_1: "FileUpLoad",
+  answer_2: "Function",
+  answer_3: "File",
+  answer_4: "Date",
+  right_answer: 3
 },];
 
 let thisArea = 0;
@@ -175,11 +174,14 @@ let questionCounter = 0;
 let questionIndex = 0;
 let i = 0;
 
+
 function startGame() {           // switch the screen from landing-page to question-page
   document.getElementById("landingPage").classList.add("d-none");
   document.getElementById("questionsPage").classList.remove("d-none");
   showQuestion();
 }
+
+
 
 function showQuestion() {        // show question and answers
  markCurrentTheme();
@@ -206,6 +208,7 @@ function showQuestion() {        // show question and answers
 }
 
 
+
 function markCurrentTheme() {       // markup the actual area and switch to next questions-area
   if (thisArea == 0) {
     questionArea = generalQuestions;
@@ -226,39 +229,56 @@ function markCurrentTheme() {       // markup the actual area and switch to next
 }
 
 
+
 function clickAnswer(selection) {       // add colors to the clicked button
     i = selection.slice(-1)
     if( i == thisQuestion['right_answer']) {
-        document.getElementById(`answerButton${i}`).classList.add("right-answer-button");
-        document.getElementById(`letter_${i}`).classList.add("right-answer-box");
+        
         rightAnswerCounter++;
     } else {
         document.getElementById(`answerButton${i}`).classList.add("wrong-answer-button");
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
+        setTimeout(() => {
+          document.getElementById(`answerButton${thisQuestion['right_answer']}`).classList.add("right-answer-button");
+        document.getElementById(`letter_${thisQuestion['right_answer']}`).classList.add("right-answer-box");
+        }, 1000);
+        
     }
     questionCounter++;
     progressBar();
-    setTimeout(clearButtonColor, 2500);
+    setTimeout(clearButtonColor, 3500);
   }
+
+
 
 function  clearButtonColor() { 
   document.getElementById(`answerButton${i}`).classList.remove("right-answer-button");
   document.getElementById(`letter_${i}`).classList.remove("right-answer-box");
   document.getElementById(`answerButton${i}`).classList.remove("wrong-answer-button");
   document.getElementById(`letter_${i}`).classList.remove("wrong-answer-box");
+    document.getElementById(`answerButton${thisQuestion['right_answer']}`).classList.remove("right-answer-button");
+  document.getElementById(`letter_${thisQuestion['right_answer']}`).classList.remove("right-answer-box");
+
+  
   setTimeout(showQuestion, 225);
 }
    
+
+
 function showResult() {
   document.getElementById('correctAnswers').innerHTML = rightAnswerCounter;
   document.getElementById('sumQuestions').innerHTML = questionCounter;
 } 
+
+
 
 function progressBar() {
   let progress = questionCounter * 5;
   document.getElementById('progressBar').style = `width: ${progress}%;`;
 }
   
+
+
 function restartGame() {
 thisArea = 0;
 questionArea = 0;
@@ -273,6 +293,8 @@ document.getElementById('endscreen').classList.add('d-none');
     document.getElementById('progressBar').style = `width: 0%;`;
     startGame();
 }
+
+
 
 function share() {
   alert("function under construction");

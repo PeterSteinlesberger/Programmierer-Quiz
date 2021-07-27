@@ -187,21 +187,25 @@ background-color: rgb(235, 59, 1);
 }
 
 .right-answer-button {
-    background-color: rgba(183,247,153,255);   
+    background-color: rgba(183,247,153,255);  
+ 
 }
 
 .right-answer-box {
     background-color: rgba(80,190,23,255);  
     color: whitesmoke; 
+ 
 }
 
 .wrong-answer-button {
     background-color: rgba(255,163,164,255);
+ 
 }
 
 .wrong-answer-box {
     background-color: rgb(223,45,47);  
     color: whitesmoke;
+   
   }
 
 .animation {
