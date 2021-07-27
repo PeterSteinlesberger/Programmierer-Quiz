@@ -197,6 +197,7 @@ function showQuestion() {        // show question and answers
    if(thisArea == 4) {
     document.getElementById('questionsPage').classList.add('d-none'); 
     document.getElementById('endscreen').classList.remove('d-none');
+    document.getElementById('tropy').classList.remove('d-none');
    }
   questionIndex = 0;
   thisArea++;
