@@ -18,6 +18,11 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="wrapper">
+			<div class="progress-bar">
+				<span id="progressBar" class="progress-bar-fill" style="width: 0%;"></span>
+			</div>
+		</div>
     <div class="main-container">
       <div class="left-container">
         <img src="img/logo.png" class="logo">
@@ -65,13 +70,15 @@
 
 <div id="endscreen" class="endscreen d-none">
   <img class="endscreen-img" src="img/brain result.png">
-  <span><b> COMPLETE <br> DEV-QUIZ</b></span>
+  <span class="endscreen-text"><b> COMPLETE <br> DEV-QUIZ</b></span>
   <div class="your-score">
     <span><b>YOUR SCORE</b></span>
-   <div id="score"></div>
+    <div class="show-result">
+   <div ><b id="correctAnswers"></b></div><div><b>/</b></div><div ><b id="sumQuestions"></b></div>
   </div>
+</div>
   <div class="button">SHARE</div>
-  <a class="replay" href="#">REPLAY</a>
+  <a class="replay" href="#" onclick="restartGame()">REPLAY</a>
 </div>
 <img id="tropy" class="tropy d-none" src="img/tropy.png">
 </div>

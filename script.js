@@ -192,12 +192,12 @@ function showQuestion() {        // show question and answers
     document.getElementById("answer_3").innerHTML = thisQuestion['answer_3'];
     document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
     questionIndex++;
-      console.log(questionIndex);
  } else { 
    if(thisArea == 4) {
     document.getElementById('questionsPage').classList.add('d-none'); 
     document.getElementById('endscreen').classList.remove('d-none');
     document.getElementById('tropy').classList.remove('d-none');
+    showResult();
    }
   questionIndex = 0;
   thisArea++;
@@ -237,6 +237,7 @@ function clickAnswer(selection) {       // add colors to the clicked button
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
     }
     questionCounter++;
+    progressBar();
     setTimeout(clearButtonColor, 20);
   }
 
@@ -248,9 +249,29 @@ function  clearButtonColor() {
   setTimeout(showQuestion, 225);
 }
    
-   
+function showResult() {
+  document.getElementById('correctAnswers').innerHTML = rightAnswerCounter;
+  document.getElementById('sumQuestions').innerHTML = questionCounter;
+} 
 
-   
+function progressBar() {
+  let progress = questionCounter * 5;
+  document.getElementById('progressBar').style = `width: ${progress}%;`;
+}
+  
+function restartGame() {
+thisArea = 0;
+questionArea = 0;
+thisQuestion = [];
+rightAnswerCounter = 0;
+questionCounter = 0;
+questionIndex = 0;
+i = 0;
+document.getElementById('endscreen').classList.add('d-none');
+    document.getElementById('tropy').classList.add('d-none');
+    document.getElementById('category_4').classList.remove('actual-category');
+    startGame();
+}
 
 
 

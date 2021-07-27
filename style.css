@@ -1,6 +1,7 @@
 body {
   margin: 0px;
  font-family: "Rubik", sans-serif;
+ background-color: rgba(254,250,239,255);
 }
 
 .background {
@@ -226,7 +227,7 @@ body {
       }
 
       .your-score { 
-        width: 240px;
+        width: 290px;
         color: rgb(232,174,33);
         font-size: 26px;
         display: flex;
@@ -260,5 +261,32 @@ body {
       .tropy {
       position: absolute;
       right: 0;
-      top: 180px;
+      top: 190px;
       }
+
+      .endscreen-text {
+        text-align: center;
+      }
+
+      .show-result {
+        display: flex;
+        color: black;
+      }
+
+      .wrapper {
+			width: 100%;
+			}
+			
+			.progress-bar {
+				width: 100%;
+				background-color: rgba(174,174,175,255);
+			}
+			
+			.progress-bar-fill {
+				display: block;
+				height: 12px;
+				background-color: rgba(39,53,92,255);
+				border-top-right-radius:  6px;
+        border-bottom-right-radius: 6px;
+				transition: width 500ms ease-in-out;
+			}
