@@ -217,7 +217,6 @@ body {
         display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   width: 900px;
   height: 65vh;
   font-size: 26px;
@@ -230,38 +229,40 @@ body {
         width: 290px;
         color: rgb(232,174,33);
         font-size: 26px;
+        margin-top: 25px;
+        margin-bottom: 45px;
         display: flex;
         justify-content: space-between;
       }
 
       .endscreen-img {
         width: 130px;
-        margin-top: 44px;
+        margin-top: 84px;
+        margin-bottom: 25px;
       }
 
-      .replay {
+ .buttons {
         color: rgb(29,61,228);
         font-size: 30px;
-        text-decoration: none;
+        margin-bottom: 25px;
+    text-decoration: none;
       }
 
-      .button {
-       height: 50px;
-        width: 240px;
-        background-color: rgba(24,60,232,255);
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 30px;
+      .buttons:hover {
+    height: 50px;
+    width: 240px;
+    background-color: rgba(24,60,232,255);
     color: rgba(229,248,255,255);
-    margin-bottom: -30px;
-      }
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
       .tropy {
       position: absolute;
       right: 0;
-      top: 190px;
+      top: 208px;
       }
 
       .endscreen-text {

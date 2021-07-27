@@ -127,7 +127,7 @@ let cssQuestions = [ {
 
 
 let jsQuestions = [ {
-  question: "Which of the following selector matches a element based on its class attribute?",
+  question: "1",
   answer_1: "The Type Selector",
   answer_2: "The Universal Selector",
   answer_3: "The Descendant Selector",
@@ -135,7 +135,7 @@ let jsQuestions = [ {
   right_answer: 4
 },
 {
-  question: "Which of the following selector matches a element based on its class attribute?",
+  question: "2",
   answer_1: "The Type Selector",
   answer_2: "The Universal Selector",
   answer_3: "The Descendant Selector",
@@ -143,7 +143,7 @@ let jsQuestions = [ {
   right_answer: 4
 },
 {
-  question: "Which of the following selector matches a element based on its class attribute?",
+  question: "3",
   answer_1: "The Type Selector",
   answer_2: "The Universal Selector",
   answer_3: "The Descendant Selector",
@@ -151,7 +151,7 @@ let jsQuestions = [ {
   right_answer: 4
 },
 {
-  question: "Which of the following selector matches a element based on its class attribute?",
+  question: "4",
   answer_1: "The Type Selector",
   answer_2: "The Universal Selector",
   answer_3: "The Descendant Selector",
@@ -159,7 +159,7 @@ let jsQuestions = [ {
   right_answer: 4
 },
 {
-  question: "Which of the following selector matches a element based on its class attribute?",
+  question: "5",
   answer_1: "The Type Selector",
   answer_2: "The Universal Selector",
   answer_3: "The Descendant Selector",
@@ -193,7 +193,7 @@ function showQuestion() {        // show question and answers
     document.getElementById("answer_4").innerHTML = thisQuestion['answer_4'];
     questionIndex++;
  } else { 
-   if(thisArea == 4) {
+   if(thisArea == 3) {
     document.getElementById('questionsPage').classList.add('d-none'); 
     document.getElementById('endscreen').classList.remove('d-none');
     document.getElementById('tropy').classList.remove('d-none');
@@ -238,7 +238,7 @@ function clickAnswer(selection) {       // add colors to the clicked button
     }
     questionCounter++;
     progressBar();
-    setTimeout(clearButtonColor, 20);
+    setTimeout(clearButtonColor, 2500);
   }
 
 function  clearButtonColor() { 
@@ -270,7 +270,12 @@ i = 0;
 document.getElementById('endscreen').classList.add('d-none');
     document.getElementById('tropy').classList.add('d-none');
     document.getElementById('category_4').classList.remove('actual-category');
+    document.getElementById('progressBar').style = `width: 0%;`;
     startGame();
+}
+
+function share() {
+  alert("function under construction");
 }
 
 
