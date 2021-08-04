@@ -173,9 +173,15 @@ let rightAnswerCounter = 0;
 let questionCounter = 0;
 let questionIndex = 0;
 let i = 0;
+let AUDIO_SUCCESS = new Audio('audio/rightAnswer.mp3');
+let AUDIO_FAIL = new Audio('audio/wrongAnswer.mp3');
+let AUDIO_WIN = new Audio('audio/audioTrack.mp3');
+let AUDIO_BUTTON = new Audio('audio/klickButton.mp3');
 
 
-function startGame() {           // switch the screen from landing-page to question-page
+function startGame() { 
+  AUDIO_WIN.pause();         // switch the screen from landing-page to question-page
+  AUDIO_BUTTON.play();
   document.getElementById("landingPage").classList.add("d-none");
   document.getElementById("questionsPage").classList.remove("d-none");
   showQuestion();
@@ -196,6 +202,7 @@ function showQuestion() {        // show question and answers
     questionIndex++;
  } else { 
    if(thisArea == 3) {
+    AUDIO_WIN.play();
     document.getElementById('questionsPage').classList.add('d-none'); 
     document.getElementById('endscreen').classList.remove('d-none');
     document.getElementById('tropy').classList.remove('d-none');
@@ -233,9 +240,10 @@ function markCurrentTheme() {       // markup the actual area and switch to next
 function clickAnswer(selection) {       // add colors to the clicked button
     i = selection.slice(-1)
     if( i == thisQuestion['right_answer']) {
-        
+      AUDIO_SUCCESS.play();
         rightAnswerCounter++;
     } else {
+      AUDIO_FAIL.play();
         document.getElementById(`answerButton${i}`).classList.add("wrong-answer-button");
         document.getElementById(`letter_${i}`).classList.add("wrong-answer-box");
         setTimeout(() => {
@@ -295,8 +303,8 @@ document.getElementById('endscreen').classList.add('d-none');
 }
 
 
-
 function share() {
+  AUDIO_BUTTON.play();
   alert("function under construction");
 }
 
