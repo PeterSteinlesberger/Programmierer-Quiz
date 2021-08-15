@@ -191,7 +191,7 @@ function startGame() {
 
 function showQuestion() {        // show question and answers
  markCurrentTheme();
-
+ 
  if( questionIndex < questionArea.length) {
     thisQuestion = questionArea[questionIndex];
     document.getElementById("question").innerHTML = thisQuestion['question'];
@@ -208,6 +208,7 @@ function showQuestion() {        // show question and answers
     document.getElementById('tropy').classList.remove('d-none');
     showResult();
    }
+   
   questionIndex = 0;
   thisArea++;
   showQuestion();
@@ -240,6 +241,8 @@ function markCurrentTheme() {       // markup the actual area and switch to next
 function clickAnswer(selection) {       // add colors to the clicked button
     i = selection.slice(-1)
     if( i == thisQuestion['right_answer']) {
+      document.getElementById(`answerButton${thisQuestion['right_answer']}`).classList.add("right-answer-button");
+        document.getElementById(`letter_${thisQuestion['right_answer']}`).classList.add("right-answer-box");
       AUDIO_SUCCESS.play();
         rightAnswerCounter++;
     } else {
@@ -254,6 +257,7 @@ function clickAnswer(selection) {       // add colors to the clicked button
     }
     questionCounter++;
     progressBar();
+    document.getElementById('invisible-container').classList.remove('d-none');
     setTimeout(clearButtonColor, 3500);
   }
 
@@ -267,8 +271,8 @@ function  clearButtonColor() {
     document.getElementById(`answerButton${thisQuestion['right_answer']}`).classList.remove("right-answer-button");
   document.getElementById(`letter_${thisQuestion['right_answer']}`).classList.remove("right-answer-box");
 
-  
   setTimeout(showQuestion, 225);
+  document.getElementById('invisible-container').classList.add('d-none');
 }
    
 

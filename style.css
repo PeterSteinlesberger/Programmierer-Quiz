@@ -157,6 +157,15 @@ background-color: rgb(235, 59, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.invisible-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
 
 .answer {
